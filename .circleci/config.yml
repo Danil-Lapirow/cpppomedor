@@ -22,15 +22,15 @@ jobs:
           name: install dependencies
           command: |
             sudo apt update
-            sudo apt install --upgrade cmake make &&
-            python3 -m venv venv &&
-            . venv/bin/activate &&
+            sudo apt install --upgrade cmake>=3.13 make
+            python3 -m venv venv
+            . venv/bin/activate 
             pip install -r tests/requirements.txt
     
       - run:
           name: build executable
           command: |
-            mkdir build &&
+            mkdir build 
             cd build && cmake .. && make
             
       # Step 3: run linter and tests
