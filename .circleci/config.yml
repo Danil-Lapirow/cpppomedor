@@ -21,7 +21,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            sudo apt install cmake make clang++ &&
+            sudo apt install cmake make &&
             python3 -m venv venv &&
             . venv/bin/activate &&
             pip install -r tests/requirements.txt
